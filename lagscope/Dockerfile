@@ -6,5 +6,5 @@ RUN apk add git gcc libc-dev make && \
 FROM alpine:latest
 LABEL maintainer="lizzha@microsoft.com"
 WORKDIR /root
-COPY --from=0 /usr/bin/lagscope .
-ENTRYPOINT ["./lagscope"]
+COPY --from=0 /usr/bin/lagscope /usr/bin
+ENTRYPOINT ["/usr/bin/lagscope"]

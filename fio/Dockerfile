@@ -7,5 +7,5 @@ FROM alpine:latest
 LABEL maintainer="lizzha@microsoft.com"
 WORKDIR /root/
 COPY --from=0 /usr/lib/libaio* /usr/lib/
-COPY --from=0 /usr/local/bin/fio .
-ENTRYPOINT ["./fio"]
+COPY --from=0 /usr/local/bin/fio /usr/local/bin
+ENTRYPOINT ["/usr/local/bin/fio"]

@@ -7,5 +7,5 @@ RUN apk add wget gcc libc-dev make && \
 FROM alpine:latest
 LABEL maintainer="lizzha@microsoft.com"
 WORKDIR /root/
-COPY --from=0 /usr/bin/ntttcp .
-ENTRYPOINT ["./ntttcp"]
+COPY --from=0 /usr/bin/ntttcp /usr/bin
+ENTRYPOINT ["/usr/bin/ntttcp"]
