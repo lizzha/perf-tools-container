@@ -8,4 +8,4 @@ FROM alpine:latest
 LABEL maintainer="lizzha@microsoft.com"
 WORKDIR /root/
 COPY --from=0 /usr/local/bin/netperf /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/netperf"]
+COPY --from=0 /usr/local/bin/netserver /usr/local/bin/
